@@ -1,0 +1,10 @@
+<div class="b-double-bar" ng-if="ctrl.error && ctrl.warning">
+	<div class="b-db-progress" ng-style="{width: ctrl.error + '%'}">
+		<div class="b-db-p-caption">Error</div>
+		<div class="b-db-p-value m-error"></div>
+	</div>
+	<div class="b-db-progress"  ng-style="{width: ctrl.warning + '%'}">
+		<div class="b-db-p-caption">Warning</div>
+		<div class="b-db-p-value m-warning"></div>
+	</div>
+</div>

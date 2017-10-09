@@ -1,0 +1,82 @@
+.overview-box
+	double-bar
+		margin-top 50px
+
+	.overview-header
+		margin-bottom 50px
+		margin-top 25px
+
+		.input-group-addon
+			cursor: pointer
+
+		.b-oh-indicator-critical.clickable
+			color #f56954
+
+			&:hover
+				color #f50900
+
+				.b-oh-i-slider
+					width 100%
+					background-color #f50900
+
+			.b-oh-i-slider
+				background-color #f50900
+
+		.b-oh-indicator.clickable
+			&:hover
+				color #1e4ccc
+
+				.b-oh-i-slider
+					width 100%
+
+			.b-oh-i-slider
+				background-color #1e4ccc
+
+
+.b-oh-indicator, .b-oh-indicator-critical
+			position relative
+			display inline-block
+			text-align center
+			margin 0 10px
+			outline none
+			transition all .3s ease
+
+			.b-oh-i-slider
+				position absolute
+				display block
+				left: 0
+				top:0
+				height 2px
+				width 0
+				transition width .3s ease
+
+			.b-oh-i-caption
+				text-transform uppercase
+				font-weight 600
+
+			.b-oh-i-value
+				font-size 20px
+
+				span
+					padding 0 2px
+
+				.b-oh-i-v-disabled
+					color: #999999
+					transition color .5s
+
+					&:hover
+						color #1e4ccc
+
+	.overview-double-bar
+		margin-bottom 20px
+
+	.overview-chart
+		margin-bottom 20px
+		height 300px
+		max-height 300px
+		width 100%
+		max-width 100%
+
+
+
+

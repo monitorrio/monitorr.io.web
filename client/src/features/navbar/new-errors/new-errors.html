@@ -1,0 +1,20 @@
+<li class="dropdown notifications-menu">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		<i class="fa fa-bug"></i>
+		<span class="label label-danger">{{ctrl.newErrors.Total}}</span>
+	</a>
+	<ul class="dropdown-menu">
+		<li class="header">You have {{ctrl.newErrors.Total}} new errors</li>
+		<li>
+			<ul class="menu" ng-repeat="newError in ctrl.newErrors.Errors">
+				<li>
+					<a href="#">
+						<i class="fa fa-warning" ng-class="ctrl.getColor(newError.Severity)"></i>
+						{{newError.Message}}
+					</a>
+				</li>
+			</ul>
+		</li>
+		<li class="footer" ng-if="ctrl.newErrors.Total !== 0"><a href="#">View all</a></li>
+	</ul>
+</li>

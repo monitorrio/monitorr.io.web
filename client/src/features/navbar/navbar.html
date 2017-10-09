@@ -1,0 +1,34 @@
+<nav class="navbar navbar-static-top">
+	<a href="#" class="sidebar-toggle border-right border-left" data-toggle="offcanvas" role="button">
+		<span class="sr-only">Toggle navigation</span>
+	</a>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<!-- <new-errors new-errors="ctrl.newErrors"></new-errors> -->
+
+			<li class="dropdown user user-menu">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<img ng-src="{{ctrl.profile.picture}}" class="user-image" alt="User Image">
+					<span class="hidden-xs">{{ctrl.profile.name}}</span>
+				</a>
+				<ul class="dropdown-menu">
+					<li class="user-header">
+						<img ng-src="{{ctrl.profile.picture}}" class="img-circle" alt="User Image">
+						<p>
+							{{ctrl.profile.name}}
+						</p>
+					</li>
+
+					<li class="user-footer">
+						<div class="pull-left">
+							<a ui-sref="main.profile({id: ctrl.profile.id})" class="btn btn-default btn-flat">Profile</a>
+						</div>
+						<div class="pull-right">
+							<a href="#" ng-click="ctrl.signOut()" class="btn btn-default btn-flat">Sign out</a>
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</nav>

@@ -1,0 +1,148 @@
+<div class="nav-tabs-custom">
+	<ul class="nav nav-tabs">
+		<li class="active">
+			<a href="#" data-target="#eDetails-{{ctrl.error.guid}}" data-toggle="tab">Details</a>
+		</li>
+		<li ng-show="ctrl.queryStringCount">
+			<a href="#" data-target="#eQueryString-{{ctrl.error.guid}}" data-toggle="tab">Query String
+				<span class="badge bg-light-blue">{{::ctrl.queryStringCount}}</span>
+			</a>
+		</li>
+		<li ng-show="ctrl.serverVariablesCount">
+			<a href="#" data-target="#eServerVariables-{{ctrl.error.guid}}" data-toggle="tab">Server Variables
+				<span class="badge bg-light-blue">{{::ctrl.serverVariablesCount}}</span>
+			</a>
+		</li>
+		<li ng-show="ctrl.formCount">
+			<a href="#" data-target="#eForm-{{ctrl.error.guid}}" data-toggle="tab">Form
+				<span class="badge bg-light-blue">{{::ctrl.formCount}}</span>
+			</a>
+		</li>
+		<li ng-show="ctrl.cookiesCount">
+			<a href="#" data-target="#eCookies-{{ctrl.error.guid}}" data-toggle="tab">Cookies
+				<span class="badge bg-light-blue">{{::ctrl.cookiesCount}}</span>
+			</a>
+		</li>
+		<li ng-show="ctrl.customDataCount">
+			<a href="#" data-target="#eCustomData-{{ctrl.error.guid}}" data-toggle="tab">Data
+				<span class="badge bg-light-blue">{{::ctrl.customDataCount}}</span>
+			</a>
+		</li>
+	</ul>
+	<div class="tab-content">
+		<div class="tab-pane active" id="eDetails-{{ctrl.error.guid}}">
+			<p class="lead">{{::ctrl.error.Message}}</p>
+			<div class="icon-c">
+				<span class="i-c-item" ng-if="ctrl.browserIcon">
+						<i class="fa" ng-class="ctrl.browserIcon"></i>
+				</span>
+				<span class="i-c-item" ng-if="ctrl.osIcon">
+						<i class="fa" ng-class="ctrl.osIcon"></i>
+				</span>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-xs-12">
+					<div class="detail-group">
+						<span class="detail-group-label">Time</span>
+						<span class="detail-group-value">{{::ctrl.error.time}}</span>
+					</div>
+
+					<div class="detail-group">
+						<span class="detail-group-label">Severity</span>
+						<span
+							class="detail-group-value capitalize">{{::ctrl.error.severity | enumValueText :'severity'}}</span>
+					</div>
+
+					<div class="detail-group">
+						<span class="detail-group-label">URL</span>
+						<span class="detail-group-value">
+						<span class="label label-info">{{::ctrl.error.method}}</span>{{::ctrl.error.url}}</span>
+					</div>
+
+					<div class="detail-group">
+						<span class="detail-group-label">Status Code</span>
+						<span class="detail-group-value">{{::ctrl.error.statusCode}}</span>
+					</div>
+
+				</div>
+				<div class="col-md-6 col-xs-12">
+					<div class="detail-group">
+						<span class="detail-group-label">Host</span>
+						<span class="detail-group-value">{{::ctrl.error.host}}</span>
+					</div>
+
+					<div class="detail-group">
+						<span class="detail-group-label">Error</span>
+						<span class="detail-group-value">{{::ctrl.error.type}}</span>
+					</div>
+
+					<div class="detail-group">
+						<span class="detail-group-label">Application</span>
+						<span class="detail-group-value">{{::ctrl.error.applicationName}}</span>
+					</div>
+
+					<div class="detail-group">
+						<span class="detail-group-label">Source</span>
+						<span class="detail-group-value">{{::ctrl.error.source}}</span>
+					</div>
+				</div>
+
+			</div>
+			<div class="row stacktrace" ng-if="ctrl.error.detail">
+				<div hljs-language="accesslog" hljs hljs-no-escape hljs-source="ctrl.error.detail">
+				</div>
+			</div>
+
+		</div><!-- /.tab-pane -->
+		<div class="tab-pane" id="eQueryString-{{ctrl.error.guid}}">
+			<table class="table table-bordered table-striped">
+				<tbody>
+				<tr ng-repeat="(name, value) in ctrl.error.queryString">
+					<td width="25%" class="name">{{::name}}</td>
+					<td>{{::value}}</td>
+				</tr>
+				</tbody>
+			</table>
+		</div><!-- /.tab-pane -->
+		<div class="tab-pane" id="eServerVariables-{{ctrl.error.guid}}">
+			<table class="table table-bordered table-striped">
+				<tbody>
+				<tr ng-repeat="(name, value) in ctrl.error.serverVariables">
+					<td width="25%" class="name">{{::name}}</td>
+					<td>{{::value}}</td>
+				</tr>
+				</tbody>
+			</table>
+		</div><!-- /.tab-pane -->
+		<div class="tab-pane" id="eForm-{{ctrl.error.guid}}">
+			<table class="table table-bordered table-striped">
+				<tbody>
+				<tr ng-repeat="(name, value) in ctrl.error.form">
+					<td class="name" width="25%">{{::name}}</td>
+					<td>{{::value}}</td>
+				</tr>
+				</tbody>
+			</table>
+		</div><!-- /.tab-pane -->
+		<div class="tab-pane" id="eCookies-{{ctrl.error.guid}}">
+			<table class="table table-bordered table-striped">
+				<tbody>
+				<tr ng-repeat="(name, value) in ctrl.error.cookies">
+					<td class="name" width="25%">{{::name}}</td>
+					<td>{{::value}}</td>
+				</tr>
+				</tbody>
+			</table>
+		</div><!-- /.tab-pane -->
+		<div class="tab-pane" id="eCustomData-{{ctrl.error.guid}}">
+			<table class="table table-bordered table-striped">
+				<tbody>
+				<tr ng-repeat="(name, value) in ctrl.error.customData">
+					<td class="name" width="25%">{{::name}}</td>
+					<td>{{::value}}</td>
+				</tr>
+				</tbody>
+			</table>
+		</div><!-- /.tab-pane -->
+	</div><!-- /.tab-content -->
+</div>

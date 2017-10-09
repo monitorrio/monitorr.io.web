@@ -1,0 +1,54 @@
+<div class="login-box">
+	<div class="login-logo">
+		<a href="/">Monitorr</a>
+	</div>
+	<!-- /.login-logo -->
+	<div class="login-box-body">
+		<p class="login-box-msg">Sign in to continue</p>
+		<div ng-if="loginFailed">
+			<p class="login-box-msg text-red">{{loginErrorMessage}}</p>
+		</div>
+		<form ng-submit="login()">
+			<div class="form-group has-feedback">
+				<input ng-model="email" type="email" class="form-control" placeholder="Email" required>
+				<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+			</div>
+			<div class="form-group has-feedback">
+				<input ng-model="password" type="password" class="form-control" placeholder="Password" required>
+				<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+			</div>
+			<div class="row">
+				<div class="col-xs-8">
+					<div class="checkbox icheck">
+					</div>
+				</div>
+				<!-- /.col -->
+				<div class="col-xs-4">
+					<button type="submit" ng-disabled="loading" class="btn btn-primary btn-block">Sign In</button>
+				</div>
+				<!-- /.col -->
+			</div>
+		</form>
+
+		<div class="social-auth-links text-center">
+			<p class="text-muted">- OR -</p>
+			<a href="#" ng-click="signGoogle()" class="btn btn-block btn-social btn-google"><i
+				class="fa fa-google-plus"></i> Sign in using Google+</a>
+			<a href="#" ng-click="signGithub()" class="btn btn-block btn-social btn-github"><i class="fa fa-github"></i>
+				Sign in using GitHub</a>
+			<!-- <a href="#" ng-click="signMicrosoft()" class="btn btn-block btn-social btn-microsoft"><i
+				class="fa fa-windows"></i> Sign in using Microsoft</a> -->
+
+		</div>
+		<!-- /.social-auth-links -->
+
+		<div class="login-box-footer text-center">
+			<a ui-sref="auth.reset">Forgot password?</a>
+			<br>
+			<a ui-sref="auth.signup" class="text-center">Register for a new account &rarr;</a>
+		</div>
+
+	</div>
+	<!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->

@@ -1,0 +1,44 @@
+{
+	"mock": {
+		"notifications": [
+			{
+				"id": 1,
+				"title": "Event Confirmed",
+				"date": "Tues, March 10, 2016",
+				"details": "Action details, really long action details"
+			}, {
+				"id": 2,
+				"title": "Hold review",
+				"date": "Tues, March 10, 2016",
+				"details": "Action details"
+			}, {
+				"id": 3,
+				"title": "Consultant denied",
+				"date": "Tues, March 10, 2016",
+				"details": "Action details"
+			}, {
+				"id": 4,
+				"title": "Action Title",
+				"date": "Tues, March 10, 2016",
+				"details": "Action details"
+			}, {
+				"id": 5,
+				"title": "Cancellation Request",
+				"date": "Tues, March 10, 2016",
+				"details": "Action details"
+			}
+		],
+		"notificationTypes": [
+			{
+				"id": 0,
+				"title": "Show All"
+			}, {
+				"id": 1,
+				"title": "Event Confirmed"
+			}, {
+				"id": 2,
+				"title": "Event Updated"
+			}
+		]
+	}
+}

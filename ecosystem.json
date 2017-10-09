@@ -1,0 +1,31 @@
+{
+    "apps": [{
+        "name": "angular-webpack",
+        "script": "server/server.js"
+    }],
+    "deploy": {
+        "production": {
+            "user": "node",
+            "host": "localhost",
+            "ref": "origin/master",
+            "repo": "git@github.com:laurvasile/angular-webpack.git",
+            "path": "/www/angular-webpack",
+            "post-deploy": "npm install && pm2 startOrRestart ecosystem.json --env production",
+            "env": {
+                "NODE_ENV": "production"
+            }
+        },
+        "staging": {
+            "user": "elmahbucket.ui",
+            "host": "staging-admin.elmahbucket.io",
+            "ref": "origin/staging",
+            "repo": "git@bitbucket.org:201apps/elmahbucket.ui.git",
+            "ssh_options": ["StrictHostKeyChecking=no", "PasswordAuthentication=no"],
+            "path": "/www/elmahbucket.ui",
+            "post-deploy": "npm install && pm2 startOrRestart ecosystem.json --env staging",
+            "env": {
+                "NODE_ENV": "staging"
+            }
+        }
+    }
+}

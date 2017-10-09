@@ -1,0 +1,109 @@
+errors
+	div.dataTables_filter
+		text-align: left;
+
+	table
+		table-layout fixed
+
+		thead
+			th
+				padding-right 15px !important
+				&.sorting, &.sorting_desc, &.sorting_asc
+					padding-right 30px !important
+			.filter
+				width 35px
+				height 17px
+				background #fff url('../../../assets/images/arrow-down.png') no-repeat center top
+				-webkit-appearance: none
+				-moz-appearance: none
+				appearance: none
+				outline none
+				text-indent 999px
+				border 1px solid #e0e0e0
+				&.filter-applied
+					background-image url('../../../assets/images/arrow-down-active.png')
+					border-color #1b44b6
+
+		th, td
+			word-wrap break-word
+			overflow hidden
+			text-overflow ellipsis
+
+		td.details-control
+			cursor pointer
+			padding 10px 5px
+
+		td.td-danger
+			border-left: 4px
+			border-left-color: #f70000
+			border-left-style: solid
+
+		td.td-warning
+			border-left: 4px
+			border-left-color: #ffd600
+			border-left-style: solid
+
+		i
+			color #337ab7
+
+		th.details-control-header
+			padding 0 !important
+
+		.table-browser-icon
+			text-align center
+			font-size 18px
+
+		.table-custom-icon
+			margin-left 5px
+
+	.reset-filters
+		margin 10px 0
+
+	.dt-header
+		display flex
+		flex-wrap wrap
+		.dt-filter
+			flex 1 0 30%
+			margin-right 20px
+			label
+				display block
+			input
+				width 100%
+		.date-filter
+			flex 1 0 25%
+			margin-right 20px
+		.dt-info
+			flex 1 0 0
+		.dt-paging
+			flex 0 0 150px
+//.box-body, .dt-wrapper, .dt-header
+//	margin: 0
+//	padding: 0
+//
+//.dt-header
+//	width: 100%
+//	text-align: right
+//
+//.dt-filter,.dt-info,.dt-paging
+//	display: inline-block
+//
+//.dt-filter
+//	width: 50%
+//	margin-left: 10px
+//	margin-right: 10px
+//
+//.dt-info
+//	margin-right: 10px
+//	margin-left: 10px
+//
+//.dt-paging
+//	padding-left: 10px
+//	margin-right: 10px
+//	vertical-align middle
+
+.nav-tabs-custom > .tab-content {
+    background: #fff none repeat scroll 0 0;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    padding: 5px 30px 30px;
+}

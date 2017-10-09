@@ -1,0 +1,15 @@
+{
+	"staging": {
+		"host": "0.0.0.0",
+		"port": 8000
+	},
+	"production": {
+		"host": "0.0.0.0",
+		"port": 9000
+	},
+	"development": {
+		"host": "0.0.0.0",
+		"port": 8000
+	}
+}
+

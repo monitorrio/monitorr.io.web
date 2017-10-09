@@ -1,0 +1,56 @@
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="ctrl.close()">
+				<span aria-hidden="true">×</span>
+			</button>
+			<h4 class="modal-title">Invite user</h4>
+		</div>
+		<div class="modal-body">
+			<div ng-show="ctrl.summaryError" class="callout callout-danger summary-error">
+				<h4>The user has not been invited!</h4>
+				<p>{{ctrl.summaryError}}</p>
+			</div>
+
+			<div class="form-horizontal">
+				<form name="ctrl.myForm" ng-submit="ctrl.save()">
+					<div class="form-group" ng-class="{'has-error': ctrl.emailHasError}">
+						<label for="email" class="col-sm-3 control-label">Email</label>
+						<div class="col-sm-9">
+							<label ng-show="ctrl.emailHasError" class="control-label" for="email">
+								<i class="fa fa-times-circle-o"></i> Log name cannot be empty
+							</label>
+							<input type="email" ng-model="ctrl.email" class="form-control" id="email"
+								   placeholder="Enter an email" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-9">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" ng-model="ctrl.canRead"> Can Read
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-9">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" ng-model="ctrl.canWrite"> Can Write
+								</label>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default pull-left" data-dismiss="modal" ng-click="ctrl.close()">Close
+			</button>
+			<button type="button" class="btn btn-primary" ng-click="ctrl.save()">Invite</button>
+		</div>
+	</div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+

@@ -1,0 +1,5 @@
+<ul ng-style="ulCss">
+	<li ng-repeat="color in ctrl.colors" ng-class="{selected: (color===ctrl.selected)}" ng-click="ctrl.pick(color)"
+		style="background-color:{{color}}"
+		ng-style="ctrl.css" ></li>
+</ul>

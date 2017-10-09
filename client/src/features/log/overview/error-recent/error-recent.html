@@ -1,0 +1,5 @@
+<div class="b-error-recent col-sm-12" ng-class="ctrl.getColor(row.Severity)" ng-click="ctrl.errorClick(row.Guid)"
+	 ng-repeat="row in ctrl.rows | orderBy: '-date'">
+	<span>{{row.Message}}</span>
+	<span class="b-er-time">{{row.Time | timeAgo}}</span>
+</div>

@@ -1,0 +1,134 @@
+<div class="content-wrapper dashboard-page">
+	<section class="content-header">
+		<div class="row">
+			<div class="col-sm-6 col-xs-12">
+				<h1 class="page-title">{{ctrl.logName}}</h1>
+				<ol class="breadcrumb">
+					<li><a ng-href="/dash"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+					<li class="active">Settings</li>
+				</ol>
+			</div>
+			<div class="col-sm-6 hidden-xs">
+			</div>
+		</div>
+	</section>
+	<!-- Main content -->
+	<section class="content">
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="nav-tabs-custom">
+					<ul class="nav nav-tabs">
+
+						<li ng-if="ctrl.isOwner" class="active pointer"><a data-target="#users" data-toggle="tab">Manage Users</a></li>
+						<li ng-if="ctrl.isOwner" class="pointer"><a data-target="#actions" data-toggle="tab">Log Actions</a></li>
+						<li class="pointer"><a data-target="#install" data-toggle="tab">Installation Instructions</a></li>
+					</ul>
+					<div class="tab-content">
+
+						<!-- /.tab-pane -->
+						<div ng-if="ctrl.isOwner" class="tab-pane active" id="users">
+							<div class="box">
+								<div class="box-header">
+									<h3 class="box-title">Users Table</h3>
+								</div>
+								<!-- /.box-header -->
+								<div class="box-body">
+									<users logId="ctrl.logId"></users>
+								</div>
+								<!-- /.box-body -->
+							</div>
+						</div>
+						<div ng-if="ctrl.isOwner" class="tab-pane" id="actions">
+							<div class="box">
+								<div class="box-body">
+									<p class="lead">Clear log</p>
+									<p>Get a fresh start. All data is deleted!</p>
+									<button ng-click="ctrl.clearLog()" class="btn btn-danger">Clear log</button>
+									<hr>
+									<p class="lead">Delete log</p>
+									<p>If you no longer need this log you can delete it along with all data.</p>
+									<button ng-click="ctrl.deleteLog()" class="btn btn-danger">Delete log</button>
+
+								</div>
+								<!-- /.box-body -->
+							</div>
+						</div>
+						<!-- /.tab-pane -->
+						<div class="tab-pane" id="install">
+							<ul class="timeline timeline-inverse">
+								<li>
+									<i class="fa fa-cloud-download bg-aqua"></i>
+									<div class="timeline-item">
+										<h3 class="timeline-header">Install <a target="_blank" href="https://www.nuget.org/packages/monitorr.io/"> Monitorr Nuget Package</a></h3>
+										<div class="timeline-body">
+											Find the Monitorr.io package in Visual Studio by using the NuGet Package Manager </br>
+											or using the Package Manager Console
+										</div>
+										<div class="timeline-footer">
+											<div class="nuget-badge">
+												<p>
+													<code>
+														Install-Package monitorr.io
+													</code>
+												</p>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<i class="fa fa-copy bg-aqua"></i>
+									<div class="timeline-item">
+										<h3 class="timeline-header no-border"><a href="#">Copy</a> LogId</h3>
+										<div class="timeline-body">
+											</br>
+
+											<input class="form-control input-lg" type="text" placeholder=".input-lg" value="{{ctrl.logId}}">
+										</div>
+										<div class="timeline-footer">
+											<a class="btn btn-info">Copy</a>
+
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<i class="fa fa-cloud-download bg-aqua"></i>
+									<div class="timeline-item">
+										<h3 class="timeline-header"><a href="#">Paste</a> Copied LogId in Projet Web.config</h3>
+										<div class="timeline-body">
+											<div class="webconfig">
+												<xmp>
+<elmah>
+	<security allowRemoteAccess="false" />
+	<errorLog type="monitorr.io.elmah.ErrorLog, monitorr.io.elmah" LogId="{{ctrl.logId}}"/>
+</elmah>
+												</xmp>
+											</div>
+										</div>
+										<div class="timeline-footer">
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<i class="fa fa-flag-checkered bg-gray"></i>
+									<div class="timeline-item">
+										<h3 class="timeline-header"> That's it!</h3>
+										<div class="timeline-body">
+											<p>Your log dashboard will start updating as soon as you application will start generating errors.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- /.tab-content -->
+				</div>
+				<!-- /.nav-tabs-custom -->
+			</div>
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

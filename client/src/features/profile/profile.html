@@ -1,0 +1,43 @@
+<div class="content-wrapper">
+	<section class="content-header">
+		<h1>
+			User Profile
+		</h1>
+		<ol class="breadcrumb">
+			<li><a ng-href="/dash"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+			<li class="active">User profile</li>
+		</ol>
+	</section>
+
+	<section class="content">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="box box-primary">
+					<div class="box-body box-profile">
+						<img class="profile-user-img img-responsive img-circle" ng-src="{{ctrl.profile.picture}}"
+							 alt="User profile picture">
+						<h3 class="profile-username text-center">{{ctrl.profile.name}}</h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<!-- <div class="nav-tabs-custom">
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a data-target="#users" data-toggle="tab">Users</a>
+						</li>
+						<li>
+							<a data-target="#actions" data-toggle="tab">Actions</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div class="active tab-pane" id="users">
+						</div>
+						<div class="tab-pane" id="actions">
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</section>
+</div>

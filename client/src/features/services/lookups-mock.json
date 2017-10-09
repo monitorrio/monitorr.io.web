@@ -1,0 +1,58 @@
+{
+	"mock": {
+		"actions": [
+			{
+				"id": 1,
+				"title": "0022993: Brown Bag Luch Series",
+				"date": "Tues, March 10, 2016",
+				"requiredAction": "Approve",
+				"color": "green"
+			}, {
+				"id": 2,
+				"title": "0022993: Brown Bag Luch Series",
+				"date": "Tues, March 10, 2016",
+				"requiredAction": "Confirm",
+				"color": "deep-orange"
+			}, {
+				"id": 3,
+				"title": "0022993: Brown Bag Luch Series",
+				"date": "Tues, March 10, 2016",
+				"requiredAction": "Complete",
+				"color": "blue"
+			}, {
+				"id": 4,
+				"title": "0022993: Brown Bag Luch Series",
+				"date": "Tues, March 10, 2016",
+				"requiredAction": "Action",
+				"color": "red"
+			}, {
+				"id": 5,
+				"title": "0022993: Brown Bag Luch Series",
+				"date": "Tues, March 10, 2016",
+				"requiredAction": "Confirm",
+				"color": "deep-orange"
+			}
+		],
+		"actionTypes": [
+			{
+				"id": 0,
+				"title": "Show All"
+			}, {
+				"id": 1,
+				"title": "Challenged Issue"
+			}, {
+				"id": 2,
+				"title": "Approval for non-billable"
+			}, {
+				"id": 3,
+				"title": "Approval for consultant"
+			}, {
+				"id": 4,
+				"title": "Cancelattion request"
+			}, {
+				"id": 5,
+				"title": "Hold review"
+			}
+		]
+	}
+}

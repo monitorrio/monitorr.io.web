@@ -1,0 +1,17 @@
+
+<aside class="main-sidebar">
+	<section class="sidebar">
+		<ul class="sidebar-menu">
+			<li class="header">QUICK VIEW</li>
+			<li ui-sref-active="active">
+				<a ui-sref="main.dash">
+					<i class="fa fa-dashboard"></i>
+					<span>Dashboard</span>
+				</a>
+			</li>
+
+			<li class="header">LOGS</li>
+			<tree-log log="log" ng-repeat="log in ctrl.logs track by log.LogId"></tree-log>
+		</ul>
+	</section>
+</aside>

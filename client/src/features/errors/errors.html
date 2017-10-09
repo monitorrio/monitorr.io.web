@@ -1,0 +1,40 @@
+<div class="box">
+	<!-- /.box-header -->
+	<div class="box-body">
+		<div class="reset-filters clearfix">
+			<button class="btn btn-primary pull-right" ng-click="resetFilters()">Reset Filters</button>
+		</div>
+
+		<table id="dt-errors" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%">
+			<thead>
+			<tr>
+				<th class="details-control-header"></th>
+				<th>Time</th>
+				<th>Url</th>
+				<th>
+					<span>Browser</span>
+					<select class="filter pull-right" data-name="browsers" ng-model="filters.browser"
+							ng-class="filterCssClass(filters.browser)"></select>
+				</th>
+				<th>
+					<span>Code</span>
+					<select class="filter pull-right" data-name="statusCodes" ng-model="filters.statusCode"
+							ng-class="filterCssClass(filters.statusCode)"></select>
+				</th>
+				<th>
+					<span>Host</span>
+					<select class="filter pull-right" data-name="hosts" ng-model="filters.host"
+							ng-class="filterCssClass(filters.host)"></select>
+				</th>
+				<th>
+					<span>Type</span>
+					<select class="filter pull-right" data-name="types" ng-model="filters.type"
+							ng-class="filterCssClass(filters.type)"></select>
+				</th>
+				<th>Message</th>
+			</tr>
+			</thead>
+		</table>
+	</div>
+	<!-- /.box-body -->
+</div>

@@ -1,0 +1,17 @@
+.metadata/
+node_modules
+*.DS_Store
+
+src/libs/vendor.js
+src/*.compiled.*
+src/includes.js
+.compiled
+*.sublime-project
+*.sublime-workspace
+
+coverage
+
+npm-debug.log
+.dat.nosync41b3.lEZpqX
+/.idea
+/dist

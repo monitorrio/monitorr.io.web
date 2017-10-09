@@ -1,0 +1,5 @@
+<div class="b-error-aggregate" ng-repeat="row in ctrl.rows | orderBy: '-count'">
+	<span ng-class="ctrl.getColor(row.Severity)" class="label">{{row.Count}}</span>
+	<span>x</span>
+	<span>{{row.Message}}</span>
+</div>

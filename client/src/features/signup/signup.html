@@ -1,0 +1,49 @@
+<div class="register-box">
+	<div class="register-logo">
+		<a>Monitorr</a>
+	</div>
+
+	<div class="register-box-body">
+		<p class="login-box-msg">Register a new account</p>
+		<div ng-if="signupFailed">
+			<p class="login-box-msg text-red">{{signupErrorMessage}}</p>
+		</div>
+		<form ng-submit="signup()">
+			<div class="form-group has-feedback">
+				<input type="text" ng-model="name" class="form-control" placeholder="Name" required>
+				<span class="glyphicon glyphicon-user form-control-feedback"></span>
+			</div>
+			<div class="form-group has-feedback">
+				<input type="email" ng-model="email" class="form-control" placeholder="Email" required>
+				<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+			</div>
+			<div class="form-group has-feedback">
+				<input type="password" ng-model="password" class="form-control" placeholder="Password" required>
+				<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+			</div>
+			<div class="form-group has-feedback">
+				<input type="password" ng-model="confirmPassword" class="form-control" placeholder="Confirm password" required>
+				<span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+			</div>
+			<div class="row">
+				<div class=" col-xs-offset-8 col-xs-4">
+					<button type="submit" ng-disabled="loading" class="btn btn-primary btn-block">Register</button>
+				</div><!-- /.col -->
+			</div>
+		</form>
+
+		<div class="social-auth-links text-center">
+			<p class="text-muted">- OR -</p>
+			<a href="#" ng-click="signGoogle()" class="btn btn-block btn-social btn-google"><i
+				class="fa fa-google-plus"></i> Sign in using Google+</a>
+			<a href="#" ng-click="signGithub()" class="btn btn-block btn-social btn-github"><i class="fa fa-github"></i>
+				Sign in using GitHub</a>
+			<!-- <a href="#" ng-click="signMicrosoft()" class="btn btn-block btn-social btn-microsoft"><i
+				class="fa fa-windows"></i> Sign in using Microsoft</a> -->
+		</div>
+
+		<div class="login-box-footer text-center">
+			<a ui-sref="auth.login" class="text-center">I already have an account</a>
+		</div>
+	</div><!-- /.form-box -->
+</div>

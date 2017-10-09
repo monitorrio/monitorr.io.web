@@ -1,0 +1,104 @@
+<div class="overview-box">
+	<div class="row overview-header text-center-xs">
+		<div class="col-sm-8">
+			<div class="b-oh-indicator clickable" ng-click="ctrl.resetFilter()">
+				<div class="b-oh-i-slider"></div>
+				<div class="b-oh-i-caption">Total</div>
+				<div class="b-oh-i-value lead">{{ctrl.logOverview.TotalErrors}}</div>
+			</div>
+
+			<div class="b-oh-indicator-critical clickable" ng-click="ctrl.filterSeverity()">
+				<div class="b-oh-i-slider"></div>
+				<div class="b-oh-i-caption">Critical</div>
+				<div class="b-oh-i-value lead">{{ctrl.logOverview.CriticalErrors}}</div>
+			</div>
+
+			<div class="b-oh-indicator">
+				<div class="b-oh-i-caption">Unique</div>
+				<div class="b-oh-i-value lead">{{ctrl.logOverview.UniqueErrors}}</div>
+			</div>
+
+			<div class="b-oh-indicator clickable" ng-click="ctrl.filterByUsers()">
+				<div class="b-oh-i-slider"></div>
+				<div class="b-oh-i-caption">Users</div>
+				<div class="b-oh-i-value lead">{{ctrl.logOverview.UsersAffected}}</div>
+			</div>
+
+			<div class="b-oh-indicator">
+				<div class="b-oh-i-slider"></div>
+				<div class="b-oh-i-caption">Browsers</div>
+				<div class="b-oh-i-value lead">{{ctrl.logOverview.BrowsersAffected}}</div>
+			</div>
+
+			<div class="b-oh-indicator clickable">
+				<div class="b-oh-i-slider"></div>
+				<div class="b-oh-i-caption">Affected Browsers</div>
+				<div class="b-oh-i-value lead">
+					<span ng-class="{'b-oh-i-v-disabled': !ctrl.logOverview.IsChromeAffected}" ng-click="ctrl.filterByBrowser('chrome')">
+						<i class="fa fa-chrome"></i>
+					</span>
+					<span ng-class="{'b-oh-i-v-disabled': !ctrl.logOverview.IsFirefoxAffected}" ng-click="ctrl.filterByBrowser('firefox')">
+						<i class="fa fa-firefox"></i>
+					</span>
+					<span ng-class="{'b-oh-i-v-disabled': !ctrl.logOverview.IsIeAffected}" ng-click="ctrl.filterByBrowser('ie')">
+						<i class="fa fa-internet-explorer"></i>
+					</span>
+					<span ng-class="{'b-oh-i-v-disabled': !ctrl.logOverview.IsOperaAffected}" ng-click="ctrl.filterByBrowser('opera')">
+						<i class="fa fa-opera"></i>
+					</span>
+					<span ng-class="{'b-oh-i-v-disabled': !ctrl.logOverview.IsSafariAffected}" ng-click="ctrl.filterByBrowser('safari')">
+						<i class="fa fa-safari"></i>
+					</span>
+				</div>
+
+			</div>
+		</div>
+		<div class="col-sm-offset-1 col-sm-3">
+			<div class="input-group input-group-unstyled pull-right">
+				<select ng-model="ctrl.filter" class="form-control" ng-change="ctrl.updateOverview(ctrl.filter)">
+					<option selected value="5m">Last 5 minutes</option>
+					<option value="15m">Last 15 minutes</option>
+					<option value="1h">Last hour</option>
+					<option value="6h">Last 6 hours</option>
+					<option value="12h">Last 12 hours</option>
+					<option value="1d">Last day</option>
+					<option value="3d">Last 3 days</option>
+					<option value="7d">Last week</option>
+					<option value="All">All</option>
+				</select>
+				<span class="input-group-addon"><a ng-click="ctrl.updateOverview()" class="btn-box-tool"><i class="fa fa-refresh"></i></a></span>
+				<span class="input-group-addon"><a href="#" class="btn-box-tool"><i class="fa fa-expand"></i></a></span>
+			</div>
+		</div>
+	</div>
+
+	<div class="row overview-double-bar">
+		<div class="col-sm-12">
+			<double-bar error="ctrl.logOverview.ErrorPercentage" warning="ctrl.logOverview.WarningPercent"></double-bar>
+		</div>
+	</div>
+
+	<div class="row overview-chart" ng-if="!ctrl.hideOverview">
+		<canvas id="bar" class="chart chart-bar"
+				chart-dataset-override="ctrl.datasetOverride" chart-options="ctrl.options"
+				chart-data="ctrl.chartData" chart-labels="ctrl.chartLabels">
+		</canvas>
+	</div>
+
+	<div class="row overview-aggregation" ng-if="!ctrl.hideOverview">
+		<div class="col-sm-12 col-lg-4">
+			<h3>Recent</h3>
+			<error-recent rows="ctrl.logOverview.RecentErrors"></error-recent>
+		</div>
+		<div class="col-sm-6 col-lg-4">
+			<h3>Frequent</h3>
+			<error-aggregate rows="ctrl.logOverview.FrequentErrors"></error-aggregate>
+		</div>
+		<div class="col-sm-6 col-lg-4">
+			<h3>Frequent URLs</h3>
+			<error-aggregate rows="ctrl.logOverview.FrequentUrls"></error-aggregate>
+		</div>
+	</div>
+
+	<p class="lead text-center" ng-if="ctrl.hideOverview">There are no data for selected period.</p>
+</div>

@@ -1,0 +1,46 @@
+<div class="content-wrapper dashboard-page">
+	<section class="content-header">
+		<div class="row">
+			<div class="col-sm-6 col-xs-12">
+				<h1 class="page-title">{{ctrl.logName}}</h1>
+				<ol class="breadcrumb">
+					<li><a ng-href="/dash"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+					<li class="active">Overview</li>
+				</ol>
+			</div>
+			<div class="col-sm-6 hidden-xs">
+			</div>
+		</div>
+	</section>
+	<!-- Main content -->
+	<section class="content">
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="nav-tabs-custom">
+					<ul class="nav nav-tabs">
+						<li class="active pointer"><a data-target="#overview" data-toggle="tab">Overview</a></li>
+						<li class="pointer"><a data-target="#errors" data-toggle="tab">Errors</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="active tab-pane" id="overview">
+							<overview errorTableFilters="ctrl.errorTableFilters"></overview>
+						</div>
+						<!-- /.tab-pane -->
+						<div class="tab-pane" id="errors">
+							<errors settings="ctrl.tableOptions"></errors>
+						</div>
+						<!-- /.tab-pane -->
+					</div>
+					<!-- /.tab-content -->
+				</div>
+				<!-- /.nav-tabs-custom -->
+			</div>
+			<!-- /.col -->
+
+			<!-- /.col -->
+		</div>
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

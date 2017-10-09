@@ -1,0 +1,18 @@
+<div class="info-box" ng-style="ctrl.css">
+	<span ui-sref="main.log({id: ctrl.log.LogId})" class="info-box-icon">{{ctrl.log.ShortName}}</span>
+	<div class="info-box-content">
+		<span class="info-box-text">{{ctrl.log.Name}}</span>
+		<span class="edit-icon pull-right" ng-click="ctrl.showModal()"><i class="glyphicon glyphicon-pencil"></i></span>
+		<span class="info-box-number">{{ctrl.log.ErrorCount}}</span>
+		<div class="progress">
+			<div class="progress-bar" style="width: {{ctrl.log.SpaceUsedPercentage}}%"></div>
+		</div>
+		<span class="progress-description">
+			<div ng-switch="ctrl.log.CriticalCount">
+                <span ng-switch-when="0">no critical errors in last hour</span>
+				<span ng-switch-when="1"><strong>1</strong> critical error in last hour</span>
+                <span ng-switch-default><strong>{{ctrl.log.CriticalCount}}</strong> critical errors in last hour</span>
+             </div>
+		</span>
+	</div>
+</div>

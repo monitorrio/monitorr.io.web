@@ -1,0 +1,52 @@
+/* ************************************** */
+/* Mandatory CSS required for ng-sortable */
+/* ************************************** */
+
+.as-sortable-item, .as-sortable-placeholder
+	display: block;
+
+.as-sortable-item
+	-ms-touch-action none
+	touch-action none
+	/* to disable context menu on iOS devices */
+	-webkit-touch-callout none
+
+.as-sortable-item-handle
+	cursor move
+	cursor -webkit-grab
+	cursor -moz-grab
+
+.as-sortable-placeholder
+	float left
+	padding-left 15px
+	padding-right 15px
+
+	&::after
+		content ""
+		display: block
+		min-height: 90px
+		background: #dbdbdb
+		width: 100%
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12)
+		border-radius: 2px
+		margin-bottom: 15px
+		border 2px dashed #777
+		box-sizing border-box
+
+.as-sortable-drag
+	position absolute
+	pointer-events none
+	z-index 9999
+	opacity .8
+	width 250px
+
+.as-sortable-hidden
+	display none !important
+
+.as-sortable-un-selectable
+	-webkit-touch-callout none
+	-webkit-user-select none
+	-khtml-user-select none
+	-moz-user-select none
+	-ms-user-select none
+	user-select none

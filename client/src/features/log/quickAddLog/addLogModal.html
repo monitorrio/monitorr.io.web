@@ -1,0 +1,61 @@
+<!--<div class="modal">-->
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="ctrl.close()">
+				<span aria-hidden="true">×</span>
+			</button>
+			<h4 class="modal-title">Create a new log</h4>
+		</div>
+		<div class="modal-body">
+			<div ng-show="ctrl.summaryError" class="callout callout-danger summary-error">
+				<h4>The log has not been saved!</h4>
+				<p>{{ctrl.summaryError}}</p>
+			</div>
+
+			<div class="form-horizontal">
+				<form name="ctrl.myForm" ng-submit="ctrl.save()">
+					<div class="form-group col-sm-12 text-center">
+						<color-picker selected="ctrl.logModel.WidgetColor"></color-picker>
+					</div>
+					<div class="form-group" ng-class="{'has-error': ctrl.logNameHasError}">
+
+						<label for="logName" class="col-sm-3 control-label">Log Name</label>
+						<div class="col-sm-9">
+							<label ng-show="ctrl.logNameHasError" class="control-label" for="logName">
+								<i class="fa fa-times-circle-o"></i> Log name cannot be empty
+							</label>
+							<input type="text" ng-model="ctrl.logModel.Name" class="form-control" id="logName"
+								   placeholder="Enter a new log name" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-9">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" ng-model="ctrl.logModel.IsDailyDigestEmail"> Daily Digest Email
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-3 col-sm-9">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" ng-model="ctrl.logModel.IsNewErrorEmail"> New Error Email
+								</label>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default pull-left" data-dismiss="modal" ng-click="ctrl.close()">Close
+			</button>
+			<button type="button" class="btn btn-primary" ng-click="ctrl.save()">Save</button>
+		</div>
+	</div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+<!--</div>-->

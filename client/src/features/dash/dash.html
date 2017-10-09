@@ -1,0 +1,56 @@
+<div class="content-wrapper dashboard-page">
+	<section class="content-header">
+		<div class="row">
+			<div class="col-sm-6 col-xs-12">
+				<h1 class="page-title">Dashboard</h1>
+				<ol class="breadcrumb">
+					<li class="active"><a ng-href="/dash"><i class="fa fa-dashboard"></i>Dashboard</a></li>
+				</ol>
+
+			</div>
+			<div class="col-sm-6 hidden-xs">
+				<!-- <form action="#" method="get" class="header-form">
+					<div class="input-group input-group-sm">
+						<input type="text" name="q" class="form-control" placeholder="Search...">
+						<span class="input-group-btn">
+							<button type="submit" name="search" id="search-btn" class="btn btn-flat">
+								<i class="fa fa-search"></i>
+							</button>
+						</span>
+					</div>
+				</form> -->
+			</div>
+		</div>
+	</section>
+	<!-- Main content -->
+	<section class="content">
+
+		<div class="controls">
+			<button type="button" class="btn btn-info"
+					data-toggle="button"
+					title="Reorder logs"
+					aria-pressed="false"
+					ng-click="ctrl.toggleReorder()">
+				<i class="fa fa fa-arrows"></i>
+			</button>
+		</div>
+
+		<div id="sortable-widget" class="row sortable-widget" is-disabled="ctrl.reorderDisabled" data-as-sortable="ctrl.dragControlListeners"
+			 data-ng-model="ctrl.logs">
+
+			<div class="col-md-3 col-sm-6 col-xs-12" data-as-sortable-item ng-repeat="log in ctrl.logs">
+
+				<span as-sortable-item-handle>
+					<widget-log log="log"></widget-log>
+				</span>
+
+			</div>
+			<div class="col-md-3 col-sm-6 col-xs-12">
+				<quick-add-log></quick-add-log>
+			</div>
+		</div>
+
+	</section>
+	<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

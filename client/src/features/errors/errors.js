@@ -183,6 +183,7 @@ function Errors($rootScope, $compile, ENV, helpersService) {
 						}
 					},
 					drawCallback: function (oSettings) {
+						oSettings._bInitComplete = true; // fix for prevent call parent(jquery) Init
 						let el = angular.element('<input date-range-picker class="form-control date-picker input-sm" type="text" placeholder="Select dates for filtering" options="datePicker.options" max="datePicker.max" ng-model="datePicker.date"/>');
 						let html = $compile(el)(scope);
 						$('.date-filter').html(html);

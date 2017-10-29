@@ -88,6 +88,7 @@ import errors from './features/errors';
 import users from './features/log/users';
 import profile from './features/profile';
 import errorDetails from './features/errors/error-details';
+import errorInfo from './features/errors/error-info';
 
 //custom css
 import './features/styles/index.styl';
@@ -152,7 +153,8 @@ angular.module('app', [
 	errorAggregate,
 	errorRecent,
 	profile,
-	errorDetails
+	errorDetails,
+	errorInfo
 
 ]).constant('EVENTS', {})
 	.config(routing)

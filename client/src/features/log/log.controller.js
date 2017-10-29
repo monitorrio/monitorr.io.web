@@ -9,15 +9,22 @@ export default class LogController {
 		this.$window = $window;
 		this.logService = logService;
 		this.logId = $stateParams.id;
+		this.errorId = $stateParams.errorId;
 		this.tableOptions = {
 			LogId: $stateParams.id
 		};
 		this.logName = '';
+		this.showErrorTab = this.errorId !== undefined && this.errorId !== '' && this.errorId !== 'settings';
+		this.errorInfo = {};
 	}
 
 	$onInit() {
 		this.$rootScope.$on('openErrorDetails', () => {
 			this.switchToErrorTab();
+		});
+
+		this.$rootScope.$on('openErrorInfo', () => {
+			this.switchToErrorInfoTab();
 		});
 
 		this.$scope.$on('errorTableFilterUpdate', () => {
@@ -31,5 +38,9 @@ export default class LogController {
 
 	switchToErrorTab() {
 		this.$window.$('.nav a[data-target="#errors"]').tab('show');
+	}
+
+	switchToErrorInfoTab() {
+		this.$window.$('.nav a[data-target="#errorInfo"]').tab('show');
 	}
 }

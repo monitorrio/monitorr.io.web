@@ -88,6 +88,16 @@
 				</div>
 
 			</div>
+			<div class="row" id="detailsss">
+				<div class="col-md-6 col-xs-12">
+					<div class="detail-group">
+						<span class="detail-group-label">Error persistent link</span>
+						<span class="detail-group-value">
+							<a target="_blank" ng-href="/log/{{::ctrl.error.log.logId}}/{{::ctrl.error.guid}}">{{::ctrl.error.guid}}</a>
+						</span>
+					</div>
+				</div>
+			</div>
 			<div class="row stacktrace" ng-if="ctrl.error.detail">
 				<div hljs-language="accesslog" hljs hljs-no-escape hljs-source="ctrl.error.detail">
 				</div>

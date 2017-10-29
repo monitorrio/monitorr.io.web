@@ -87,6 +87,12 @@ export default class Logs {
 		return this.httpService.getJson(request);
 	}
 
+	getError(errorId) {
+		let request = {
+			url: '/errors/' + errorId + '/info'
+		};
+		return this.httpService.getJson(request);
+	}
 
 	getLog(logId) {
 		let request = {

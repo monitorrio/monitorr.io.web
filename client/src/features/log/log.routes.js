@@ -2,7 +2,7 @@ routes.$inject = ['$stateProvider'];
 
 export default function routes($stateProvider) {
 	$stateProvider.state('main.log', {
-		url: 'log/:id',
+		url: 'log/:id/:errorId',
 		parent: 'main',
 		template: '<log></log>'
 	}).state('main.log.settings', {

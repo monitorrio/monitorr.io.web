@@ -21,6 +21,7 @@
 					<ul class="nav nav-tabs">
 						<li class="active pointer"><a data-target="#overview" data-toggle="tab">Overview</a></li>
 						<li class="pointer"><a data-target="#errors" data-toggle="tab">Errors</a></li>
+						<li class="pointer" ng-if="ctrl.showErrorTab"><a data-target="#errorInfo" data-toggle="tab">Error Details</a></li>
 					</ul>
 					<div class="tab-content">
 						<div class="active tab-pane" id="overview">
@@ -29,6 +30,11 @@
 						<!-- /.tab-pane -->
 						<div class="tab-pane" id="errors">
 							<errors settings="ctrl.tableOptions"></errors>
+						</div>
+						<!-- /.tab-pane -->
+						<!-- /.tab-pane -->
+						<div class="tab-pane" id="errorInfo">
+							<error-info errorId="ctrl.errorId"></error-info>
 						</div>
 						<!-- /.tab-pane -->
 					</div>

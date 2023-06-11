@@ -11,19 +11,17 @@ module.exports = webpackMerge.smart(commonConfig, {
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.DefinePlugin({
-			AUTH_REDIRECTURL: '\'http://localhost:8000/login\'',
-			/*AUTH0_CLIENT_ID: '\'2YUcbwH2ypc7LZ56HscwhJmgAy6UOeVb\'',*/
-			AUTH0_CLIENT_ID: '\'bETIoIcsKnZHShZh2kKXVCFOHmVKSU52\'',
-			AUTH0_DOMAIN: '\'ksbrov.auth0.com\'',
+			AUTH_REDIRECTURL: '\'http://localhost:8002/login\'',
+			AUTH0_CLIENT_ID: '\'2YUcbwH2ypc7LZ56HscwhJmgAy6UOeVb\'',
+			AUTH0_DOMAIN: '\'greystatsllc.auth0.com\'',
 			BASE_API: '\'http://localhost:18000/api\'',
-			AUTH0_SIGNUP_URL: '\'https://ksbrov.auth0.com/dbconnections/signup\'',
-			/*AUTH0_SIGNUP_URL: '\'https://greystatsllc.auth0.com/dbconnections/signup\'',*/
+			AUTH0_SIGNUP_URL: '\'https://greystatsllc.auth0.com/dbconnections/signup\'',
 			AUTH0_DB_CONNECTION:'\'Username-Password-Authentication\''
 		}),
 		new webpack.DefinePlugin({
 			'process.env': {
 				'NODE_ENV': JSON.stringify('dev'),
-				'API_URL': JSON.stringify('http://localhost:18000/api')
+				'API_URL': JSON.stringify('http://localhost:8000/api')
 			}
 		})
 	],

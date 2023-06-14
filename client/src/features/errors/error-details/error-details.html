@@ -41,7 +41,7 @@
 				</span>
 			</div>
 			<div class="row">
-				<div class="col-md-6 col-xs-12">
+				<div class="col-md-3 col-xs-3">
 					<div class="detail-group">
 						<span class="detail-group-label">Time</span>
 						<span class="detail-group-value">{{::ctrl.error.time}}</span>
@@ -50,7 +50,7 @@
 					<div class="detail-group">
 						<span class="detail-group-label">Severity</span>
 						<span
-							class="detail-group-value capitalize">{{::ctrl.error.severity | enumValueText :'severity'}}</span>
+							class="detail-group-value capitalize">{{::ctrl.error.severity | enumValueText:'severity'}}</span>
 					</div>
 
 					<div class="detail-group">
@@ -65,7 +65,7 @@
 					</div>
 
 				</div>
-				<div class="col-md-6 col-xs-12">
+				<div class="col-md-3 col-xs-3">
 					<div class="detail-group">
 						<span class="detail-group-label">Host</span>
 						<span class="detail-group-value">{{::ctrl.error.host}}</span>
@@ -86,6 +86,16 @@
 						<span class="detail-group-value">{{::ctrl.error.source}}</span>
 					</div>
 				</div>
+				<div class="col-md-3 col-xs-3">
+					<table class="table table-bordered table-striped">
+						<tbody>
+						<tr ng-repeat="(name, value) in ctrl.error.customData">
+							<td class="name" width="25%">{{::name}}</td>
+							<td>{{::value}}</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
 
 			</div>
 			<div class="row" id="detailsss">
@@ -93,7 +103,8 @@
 					<div class="detail-group">
 						<span class="detail-group-label">Error persistent link</span>
 						<span class="detail-group-value">
-							<a target="_blank" ng-href="/log/{{::ctrl.error.log.logId}}/{{::ctrl.error.guid}}">{{::ctrl.error.guid}}</a>
+							<a target="_blank"
+							   ng-href="/log/{{::ctrl.error.log.logId}}/{{::ctrl.error.guid}}">{{::ctrl.error.guid}}</a>
 						</span>
 					</div>
 				</div>

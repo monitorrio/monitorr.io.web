@@ -89,6 +89,7 @@ import users from './features/log/users';
 import profile from './features/profile';
 import errorDetails from './features/errors/error-details';
 import errorInfo from './features/errors/error-info';
+import activity from './features/activity';
 
 //custom css
 import './features/styles/index.styl';
@@ -111,6 +112,7 @@ angular.module('app', [
 
 	bModal,
 	errors,
+	activity,
 	users,
 	ngSweetAlert,
 	'yaru22.angular-timeago',

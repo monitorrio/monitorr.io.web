@@ -40,6 +40,10 @@ export default class LogController {
 		this.$window.$('.nav a[data-target="#errors"]').tab('show');
 	}
 
+	switchToActivityTab() {
+		this.$window.$('.nav a[data-target="#activity"]').tab('show');
+	}
+
 	switchToErrorInfoTab() {
 		this.$window.$('.nav a[data-target="#errorInfo"]').tab('show');
 	}
